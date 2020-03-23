@@ -176,12 +176,34 @@ public class CofetarieService {
     }
 
     public void schimbareOrar() {
-        //TODO 7: verificare daca ziua introdusa de la tastatura este o cheie valida (LUNI, MARTI, etc)
+
         System.out.println("-----ORARUL SE VA SCHIMBA-----");
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Introduceti ziua pentru care doriti sa faceti schimbarea de orar");
         String zi = scanner1.nextLine().toUpperCase();
+        if (zi.equals(ZileleSaptamanii.LUNI) ||
+                zi.equals(ZileleSaptamanii.MARTI) ||
+                zi.equals(ZileleSaptamanii.MIERCURI) ||
+                zi.equals(ZileleSaptamanii.JOI) ||
+                zi.equals(ZileleSaptamanii.VINERI) ||
+                zi.equals(ZileleSaptamanii.SAMBATA) ||
+                zi.equals(ZileleSaptamanii.DUMINICA)) {
+            System.out.println("Se poate valida schimbarea de orar");
+        } else {
+            System.out.println("Reintrodu o zi valida");
+            System.out.println("Introduceti ziua pentru care doriti sa faceti schimbarea de orar");
+            String zi1 = scanner1.nextLine().toUpperCase();
+        }
 
+            /*
+            *
+        Scanner scanner3 = new Scanner(System.in);
+        System.out.println("Introduceti programul nou pentru ziua de "+zi);
+        String programOrarNou = scanner1.nextLine();
+        cofetariaMea.getOrarCofetarie().replace(zi, programOrarNou);
+        System.out.println("Noul program pentru "+zi+" este " + programOrarNou);
+    }
+            * */
         Scanner scanner2 = new Scanner(System.in);
         System.out.println("Introduceti programul nou pentru ziua de " + zi);
         String programOrarNou = scanner2.nextLine();
@@ -199,5 +221,57 @@ public class CofetarieService {
      * */
 
 
+    public void stergeClientDupaOCaracteristica(String caracteristica, String valoare) {
+        Scanner scanner1 = new Scanner(System.in);
+        System.out.println("Dati caracteristica dupa care vreti sa stergeti clientul! ");
+        caracteristica = scanner1.nextLine();
+        //validare extra - verificare ca aceasta caracteristica exista (nume?prenume?adresa?)
+
+        Scanner scanner2 = new Scanner(System.in);
+        System.out.println("Dati valoarea dupa care vreti sa stergeti clientul! ");
+        valoare = scanner2.nextLine();
+        if (Integer.valueOf(valoare) >= 0 ||
+                Integer.valueOf(valoare) < Integer.MAX_VALUE) {
+            System.out.println("Atentie!! Esti pe punctul de a sterge un client!! " +
+                    "Esti sigur ca vrei sa stergi clientul care are varsta de " + valoare);
+
+            //stergi clientul care are varsta de {valoare}
+            /*
+             * 1. parcurgi lista de clienti si verifici daca vreun client are varsta = valoare
+             * 2. daca exista clientul care are varsta = valoare
+             *   2.1. extragi tot obiectul client ???
+             *   2.2. stergi clientul respectiv - stergeClient(Client clientulCareVaFiSters)
+             *
+             * */
+        }
+
+
+        System.out.println("Atentie!! Esti pe punctul de a sterge un client!! " +
+                "Esti sigur ca vrei sa stergi clientul care are " + caracteristica + ": " +
+                valoare + " ?");
+        //stergi clientul care are caracteristica {caracteristica} si valoarea caracteristicii {valoare}
+        /*
+         *
+         * 1. parcurgi lista de clienti si verifici daca vreun client are proprietatea = {caracteristica}
+         * 2. daca exista clientul care are proprietatea = {caracteristica} si valoarea = {valoare}
+         *   2.1. extragi tot obiectul client ???
+         *   2.2. stergi clientul respectiv - stergeClient(Client clientulCareVaFiSters)
+         *
+         * */
+    }
+
+
+        /*
+    REZOLVARE CATALIN PAULET
+     Scanner scanner = new Scanner(System.in);
+        String raspuns = scanner.nextLine().toUpperCase();
+        if (raspuns.equals("YES") || raspuns.equals("NO") || raspuns.equals("DESIGUR")) {
+            cofetariaMea.getListaClienti().remove(clientulCareVaFiSters);
+            System.out.println("Clientul " + clientulCareVaFiSters.getNume() + " a fost sters");
+        } else {
+            System.out.println("Clientul " + clientulCareVaFiSters.getNume() + " nu a fost sters");
+            System.out.println("Fii mai atent, te rog!!");
+        }
+    * */
 
 }

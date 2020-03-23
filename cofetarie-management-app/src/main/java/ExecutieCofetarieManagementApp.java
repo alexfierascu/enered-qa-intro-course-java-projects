@@ -1,3 +1,4 @@
+import model.Client;
 import model.ProdusCofetarie;
 import service.ClientService;
 import service.CofetarieService;
@@ -8,61 +9,63 @@ public class ExecutieCofetarieManagementApp {
         CofetarieService cofetarieService = new CofetarieService();
         ClientService clientService = new ClientService();
 
+
 //        cofetarieService.creareCofetarie();
 //        cofetarieService.afisareInformatiiCofetarie();
 //        cofetarieService.schimbareAdresaCofetarie();
 
 
-        //adaugam clienti
-//        Client clientTest1 = Client.builder()
-//                .adresa("iasi")
-//                .nume("ceva")
-//                .prenume("cristi")
-//                .varsta(29)
-//                .clientFidel(false)
-//                .build();
-//
-//        Client clientTest2 = Client.builder()
-//                .adresa("neamt")
-//                .nume("ifrim")
-//                .prenume("cristina")
-//                .varsta(29)
-//                .clientFidel(false)
-//                .build();
-//
-//        Client clientTest3 = Client.builder()
-//                .adresa("vaslui")
-//                .nume("popescu")
-//                .prenume("ramona")
-//                .varsta(29)
-//                .clientFidel(false)
-//                .build();
-//
-//        Client clientTest4 = Client.builder()
-//                .adresa("vaslui")
-//                .nume("fierascu")
-//                .prenume("alexandru")
-//                .varsta(29)
-//                .clientFidel(false)
-//                .build();
-//
-//        Client clientTest5 = Client.builder()
-//                .adresa("vaslui")
-//                .nume("fierascu")
-//                .prenume("roxana")
-//                .varsta(29)
-//                .clientFidel(false)
-//                .build();
+        // creem clienti
+        Client clientTest1 = Client.builder()
+                .adresa("iasi")
+                .nume("ceva")
+                .prenume("cristi")
+                .varsta(29)
+                .clientFidel(false)
+                .build();
 
-//        Client clientTest4  = new Client();
-//        clientTest4.setNume("Decebal");clientTest4.setPrenume();
+        Client clientTest2 = Client.builder()
+                .adresa("neamt")
+                .nume("ifrim")
+                .prenume("cristina")
+                .varsta(29)
+                .clientFidel(false)
+                .build();
+
+        Client clientTest3 = Client.builder()
+                .adresa("vaslui")
+                .nume("popescu")
+                .prenume("ramona")
+                .varsta(29)
+                .clientFidel(false)
+                .build();
+
+        Client clientTest4 = Client.builder()
+                .adresa("vaslui")
+                .nume("fierascu")
+                .prenume("alexandru")
+                .varsta(29)
+                .clientFidel(false)
+                .build();
+
+        Client clientTest5 = Client.builder()
+                .adresa("vaslui")
+                .nume("fierascu")
+                .prenume("roxana")
+                .varsta(29)
+                .clientFidel(false)
+                .build();
+
+        Client clientTest6 = new Client();
+        clientTest6.setNume("Decebal");
+        clientTest6.setPrenume("Mircea");
 
 
-//        cofetarieService.adaugaClient(clientTest1);
-//        cofetarieService.adaugaClient(clientTest2);
-//        cofetarieService.adaugaClient(clientTest3);
-//        cofetarieService.adaugaClient(clientTest4);
-//        cofetarieService.adaugaClient(clientTest5);
+        cofetarieService.adaugaClient(clientTest1);
+        cofetarieService.adaugaClient(clientTest2);
+        cofetarieService.adaugaClient(clientTest3);
+        cofetarieService.adaugaClient(clientTest4);
+        cofetarieService.adaugaClient(clientTest5);
 //        cofetarieService.afiseazaListaClientiCofetarie();
 //        cofetarieService.afiseazaNumarClientiExistenti();
 //
@@ -114,6 +117,8 @@ public class ExecutieCofetarieManagementApp {
         clientService.adaugareProdusCofetarieInCosulDeCumparaturi(produsCofetarie1);
         clientService.adaugareProdusCofetarieInCosulDeCumparaturi(produsCofetarie2);
         clientService.afisarePretCosCumparaturi();
+        //clientService.calculareDiscount();
+        clientService.calcularePretFinalaDupaDiscount();
 
     }
 }
