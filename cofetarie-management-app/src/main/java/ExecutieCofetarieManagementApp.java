@@ -1,4 +1,5 @@
 import model.Client;
+import model.Cofetarie;
 import model.ProdusCofetarie;
 import service.ClientService;
 import service.CofetarieService;
@@ -8,6 +9,13 @@ public class ExecutieCofetarieManagementApp {
     public static void main(String[] args) {
         CofetarieService cofetarieService = new CofetarieService();
         ClientService clientService = new ClientService();
+
+//        Client Razvan = new Client(); //setters
+//        Cofetarie Friscot = new Cofetarie();
+//        Friscot.adaugaClient(Razvan);
+//        ProdusCofetarie Tiramisu = new ProdusCofetarie();
+//        Friscot.Razvan.adaugaProdusCofetarie(Tiramisu);
+//        Friscot.Razvan.Tiramisu.afisarePret();
 
 
 //        cofetarieService.creareCofetarie();
@@ -118,7 +126,7 @@ public class ExecutieCofetarieManagementApp {
         clientService.adaugareProdusCofetarieInCosulDeCumparaturi(produsCofetarie2);
         clientService.afisarePretCosCumparaturi();
         //clientService.calculareDiscount();
-        clientService.calcularePretFinalaDupaDiscount();
+        clientService.calcularePretFinalDupaDiscount();
 
     }
 }

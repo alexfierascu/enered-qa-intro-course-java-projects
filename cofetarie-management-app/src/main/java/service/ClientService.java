@@ -11,6 +11,8 @@ public class ClientService {
     private double sumaDePlatit = 0;
     private Client clientulMeu = new Client();
 
+
+
     public void adaugareProdusCofetarieInCosulDeCumparaturi(ProdusCofetarie produsCofetarieNou) {
         clientulMeu.getListaProduseCofetarieClient().add(produsCofetarieNou);
         System.out.println("Produsul adaugat are pretul de " + produsCofetarieNou.getPretProdusCofetarie() + " RON");
@@ -38,7 +40,7 @@ public class ClientService {
         }
     }
 
-    public void calcularePretFinalaDupaDiscount() {
+    public void calcularePretFinalDupaDiscount() {
         calculareDiscount();
 
         Scanner scanner = new Scanner(System.in);
@@ -56,5 +58,7 @@ public class ClientService {
             System.out.println("Suma de plata finala este " + sumaDePlatit);
         }
     }
+
+
 
 }
